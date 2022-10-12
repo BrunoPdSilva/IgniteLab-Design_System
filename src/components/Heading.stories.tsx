@@ -11,44 +11,32 @@ export default {
   argTypes: {
     size: {
       options: ["sm", "md", "lg"],
-      control: {
-        type: "inline-radio"
-      }
-    }
+      control: { type: "inline-radio" },
+    },
   },
 } as Meta<HeadingProps>;
 
 export const Default: StoryObj<HeadingProps> = {};
 
 export const Small: StoryObj<HeadingProps> = {
-  args: {
-    size: "sm",
-  },
+  args: { size: "sm" },
 };
 
 export const Large: StoryObj<HeadingProps> = {
-  args: {
-    size: "lg",
-  },
+  args: { size: "lg" },
 };
 
 export const CustomComponent: StoryObj<HeadingProps> = {
   args: {
-    asChild: true, 
-    children: (
-      <h1>Heading with h1</h1>
-    )
+    asChild: true,
+    children: <h1>Heading with h1</h1>,
   },
   argTypes: {
     children: {
-      table: {
-        disable: true,
-      }
+      table: { disable: true },
     },
     asChild: {
-      table: {
-        disable: true,
-      }
-    }
-  }
+      table: { disable: true },
+    },
+  },
 };
