@@ -12,13 +12,15 @@ export default {
   parameters: {
     msw: {
       handlers: [
-        rest.post('/sessions', (req, res) => {
-          return res()
-        })        
+        rest.post('/sessions', (req, res, ctx) => {
+          return res(ctx.json({
+            message: 'Login realizado!'
+          }))
+        })
       ],
-    }
+    },
   }
-} as Meta;
+} as Meta
 
 export const Default: StoryObj = {
   play: async ({ canvasElement }) => {
